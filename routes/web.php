@@ -26,8 +26,16 @@ Route::any('/logout', [App\Http\Controllers\auth\AuthController::class, 'logout'
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\admin\DashboardController::class, 'dashboard'])->name('dashboard');
     Route::group(['prefix' => 'content'], function () {
+        // success infomaton 
         Route::get('/success-info', [App\Http\Controllers\admin\SuccessInfoController::class, 'index'])->name('content.success-info');
+        Route::post('/success-info-retrieve', [App\Http\Controllers\admin\SuccessInfoController::class, 'data_retrive'])->name('content.success-retrieve');
         Route::post('/success-info-submit', [App\Http\Controllers\admin\SuccessInfoController::class, 'submit'])->name('content.success-info.submit');
+        Route::post('/success-info-update', [App\Http\Controllers\admin\SuccessInfoController::class, 'update'])->name('content.success-info.update');
+        Route::post('/success-info-delete', [App\Http\Controllers\admin\SuccessInfoController::class, 'delete'])->name('content.success-info.delete');
+        Route::post('/success-info-update-modal', [App\Http\Controllers\admin\SuccessInfoController::class, 'fetchUpdateModal'])->name('info_update.fetch');
+
+
+        // app images 
         Route::get('/app-images', [App\Http\Controllers\admin\AppImagesController::class, 'index'])->name('content.app-images');
     });
 });
