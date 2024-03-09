@@ -15,7 +15,20 @@
         <div class="header-navbar-shadow"></div>
         <div class="content-wrapper container-xxl p-0">
             <div class="content-body">
-                Images From ThatWE App
+                <div class="row">
+                    <div class="col-md-3 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Accommodation</h4>
+
+                                <img class="img-fluid my-2"
+                                    src="https://thatswe.de/public/assets/img/screen-logo/3-Accommodation.png"
+                                    alt="Accommodation">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

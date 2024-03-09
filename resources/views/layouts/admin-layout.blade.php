@@ -101,6 +101,20 @@
             background: #161d31;
             border-radius: 6px;
         }
+
+        .al_ajax_loder {
+            height: 100%;
+            text-align: center;
+            width: 100$;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .al_ajax_loder img {
+            width: 50px;
+            height: auto;
+        }
     </style>
     @yield('custom-css')
     <!-- END: Custom CSS-->
