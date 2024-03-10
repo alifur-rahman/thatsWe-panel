@@ -37,7 +37,13 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
         // app images 
         Route::get('/app-images', [App\Http\Controllers\admin\AppImagesController::class, 'index'])->name('content.app-images');
+        Route::post('/app-images-retrieve', [App\Http\Controllers\admin\AppImagesController::class, 'data_retrive'])->name('content.app-image-retrieve');
+        Route::post('/app-images-submit', [App\Http\Controllers\admin\AppImagesController::class, 'submit'])->name('content.app-images.add');
+        Route::post('/app-images-update-modal', [App\Http\Controllers\admin\AppImagesController::class, 'fetchUpdateModal'])->name('image_update.fetch');
+        Route::post('/app-images-delete', [App\Http\Controllers\admin\AppImagesController::class, 'delete'])->name('content.app-image.delete');
+        Route::post('/app-images-update', [App\Http\Controllers\admin\AppImagesController::class, 'update'])->name('content.app-images.update');
     });
+
 });
 
 
