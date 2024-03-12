@@ -377,6 +377,25 @@
                     <i data-feather="more-horizontal"></i>
                 </li>
 
+                <!-- START: Order management -->
+                <li class=" nav-item  {{ Request::is('order/*') ? 'open' : '' }}"><a
+                        class="d-flex align-items-center" href="#">
+                        <i data-feather='archive'></i>
+                        <span class="menu-title text-truncate">
+                            {{ __('Manage Orders') }}
+                        </span>
+                    </a>
+                    <ul class="menu-content">
+                        <li class="{{ Route::is('order.show') ? 'active' : '' }}">
+                            <a class="d-flex align-items-center" href="{{ route('order.show') }}">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate">
+                                    {{ __('All Orders') }} </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class=" navigation-header">
                     <span>{{ __('Email Menagements') }}</span>
                     <i data-feather="more-horizontal"></i>
