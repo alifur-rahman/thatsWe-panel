@@ -42,7 +42,7 @@
                             <div class="mb-1">
                                 <label class="form-label">Assigned</label>
                                 <ul class="assigned ps-0 text-center">
-                                    <img id="showscreen_logo-u" src="{{ url('../' . $single->screen_logo) }}"
+                                    <img id="showscreen_logo-u" src="{{ url('../' . $itemData->screen_logo) }}"
                                         alt="">
                                 </ul>
                             </div>
@@ -57,7 +57,8 @@
                         <div class="mb-1">
                             <label class="form-label">Assigned</label>
                             <ul class="assigned ps-0 text-center">
-                                <img id="showScreenshort-u" src="{{ url('../' . $single->screenshot) }}" alt="">
+                                <img id="showScreenshort-u" src="{{ url('../' . $itemData->screenshot) }}"
+                                    alt="">
                             </ul>
 
                         </div>

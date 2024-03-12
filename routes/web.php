@@ -43,6 +43,15 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::post('/app-images-delete', [App\Http\Controllers\admin\AppImagesController::class, 'delete'])->name('content.app-image.delete');
         Route::post('/app-images-update', [App\Http\Controllers\admin\AppImagesController::class, 'update'])->name('content.app-images.update');
     });
+    // Agency routes 
+    Route::group(['prefix' => 'agency'], function () {
+        Route::get('/show', [App\Http\Controllers\admin\AgencyController::class, 'index'])->name('agency.show');
+        Route::post('/show/retrieve', [App\Http\Controllers\admin\AgencyController::class, 'data_retrive'])->name('agency.show.retrieve');
+        Route::post('/add', [App\Http\Controllers\admin\AgencyController::class, 'submit'])->name('agency.submit');
+        Route::post('/update', [App\Http\Controllers\admin\AgencyController::class, 'update'])->name('agency.update');
+        Route::post('/delete', [App\Http\Controllers\admin\AgencyController::class, 'delete'])->name('agency.delete');
+        Route::post('/update-modal', [App\Http\Controllers\admin\AgencyController::class, 'fetchUpdateModal'])->name('agency.update.fetch');
+    });
 
 });
 

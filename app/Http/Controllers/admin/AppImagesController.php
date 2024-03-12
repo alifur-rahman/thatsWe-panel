@@ -68,13 +68,13 @@ class AppImagesController extends Controller
             $screenshot_filename = Str::slug($title) . '-' . $timestamp . '-screenshot.' . $request->file('screenshot')->getClientOriginalExtension();
     
             // Move files to upload directory
-            $request->file('screen_logo')->move(base_path('../upload-files'), $screen_logo_filename);
-            $request->file('screenshot')->move(base_path('../upload-files'), $screenshot_filename);
+            $request->file('screen_logo')->move(base_path('../upload-files/app-images/'), $screen_logo_filename);
+            $request->file('screenshot')->move(base_path('../upload-files/app-images/'), $screenshot_filename);
         
             // Save data with uploaded file paths
             $data = $request->all();
-            $data['screen_logo'] = 'upload-files/' . $screen_logo_filename;
-            $data['screenshot'] = 'upload-files/' . $screenshot_filename;
+            $data['screen_logo'] = 'upload-files/app-images/' . $screen_logo_filename;
+            $data['screenshot'] = 'upload-files/app-images/' . $screenshot_filename;
             $successInfo = appImages::create($data);
         
             return response()->json(['status' => true, 'message' => 'Data saved successfully']);
@@ -110,7 +110,7 @@ class AppImagesController extends Controller
             // Update title
             $successInfo->title = $request->input('title');
     
-            $uploadPath = storage_path('../upload-files');
+            $uploadPath = storage_path('../upload-files/app-images/');
             $timestamp = now()->timestamp;
             // Update screen logo if provided
             if ($request->hasFile('screen_logo')) {
@@ -124,8 +124,8 @@ class AppImagesController extends Controller
                 }
     
                 // Upload new screen logo
-                $request->file('screen_logo')->move(base_path('../upload-files'), $screen_logo_filename);
-                $successInfo->screen_logo = 'upload-files/' . $screen_logo_filename;
+                $request->file('screen_logo')->move(base_path('../upload-files/app-images/'), $screen_logo_filename);
+                $successInfo->screen_logo = 'upload-files/app-images/' . $screen_logo_filename;
             }
     
             // Update screenshot if provided
@@ -140,8 +140,8 @@ class AppImagesController extends Controller
                 }
     
                 // Upload new screenshot
-                $request->file('screenshot')->move(base_path('../upload-files'), $screenshot_filename);
-                $successInfo->screenshot = 'upload-files/' . $screenshot_filename;
+                $request->file('screenshot')->move(base_path('../upload-files/app-images/'), $screenshot_filename);
+                $successInfo->screenshot = 'upload-files/app-images/' . $screenshot_filename;
             }
     
             // Save changes to the database
@@ -159,7 +159,7 @@ class AppImagesController extends Controller
             $screen_logo_path = $successInfo->screen_logo;
             $screenshot_path = $successInfo->screenshot;
           // Inside your method
-            $uploadPath = storage_path('../upload-files');
+            $uploadPath = storage_path('../upload-files/app-images/');
             if (Storage::disk('local')->exists($uploadPath . '/' . $screen_logo_path)) {
                 Storage::disk('local')->delete($uploadPath . '/' . $screen_logo_path);
             }

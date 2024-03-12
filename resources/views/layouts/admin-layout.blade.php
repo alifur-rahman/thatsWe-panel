@@ -316,10 +316,10 @@
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class="{{ Request::is('cms/dashboard') ? 'active' : '' }}" id="mainMenuLi">
+                <li class="{{ Request::is('dashboard') ? 'active' : '' }}" id="mainMenuLi">
                     <a class="d-flex align-items-center" href="{{ route('dashboard') }}">
                         <i data-feather="home"></i>
-                        <span class="menu-item text-truncate" data-i18n="Configuration">{{ __('Dashboard') }}</span>
+                        <span class="menu-item text-truncate">{{ __('Dashboard') }}</span>
                     </a>
                 </li>
                 <!-- END: Dashboard -->
@@ -328,10 +328,10 @@
                     <i data-feather="more-horizontal"></i>
                 </li>
                 <!-- START: content management -->
-                <li class="nav-item {{ Request::is('cms/content/*') ? 'open' : '' }}">
+                <li class="nav-item {{ Request::is('content/*') ? 'open' : '' }}">
                     <a class="d-flex align-items-center" href="#">
                         <i data-feather='columns'></i>
-                        <span class="menu-title text-truncate" data-i18n="Manage Accounts">
+                        <span class="menu-title text-truncate">
                             {{ __('Manage Content') }}
                         </span>
                     </a>
@@ -339,14 +339,14 @@
                         <li class="{{ Route::is('content.success-info') ? 'active' : '' }}">
                             <a class="d-flex align-items-center" href="{{ route('content.success-info') }}">
                                 <i data-feather="circle"></i>
-                                <span class="menu-item text-truncate" data-i18n="Live Trading Account List">
+                                <span class="menu-item text-truncate">
                                     {{ __('Success Info') }} </span>
                             </a>
                         </li>
                         <li class="{{ Route::is('content.app-images') ? 'active' : '' }}">
                             <a class="d-flex align-items-center" href="{{ route('content.app-images') }}">
                                 <i data-feather="circle"></i>
-                                <span class="menu-item text-truncate" data-i18n="Demo Trading Account List">
+                                <span class="menu-item text-truncate">
                                     {{ __('App Images') }} </span>
                             </a>
                         </li>
@@ -354,28 +354,19 @@
                 </li>
                 <!-- END: content management -->
                 <!-- START: Agency management -->
-                <li class=" nav-item  {{ Request::is('cms/agency/*') ? 'open' : '' }}"><a
+                <li class=" nav-item  {{ Request::is('agency/*') ? 'open' : '' }}"><a
                         class="d-flex align-items-center" href="#">
                         <i data-feather='activity'></i>
-                        <span class="menu-title text-truncate" data-i18n="Manage Accounts">
+                        <span class="menu-title text-truncate">
                             {{ __('Manage Agency ') }}
                         </span>
                     </a>
                     <ul class="menu-content">
-                        <li class="{{ Request::is('admin/trading-account-details-live') ? 'active' : '' }}">
-                            <a class="d-flex align-items-center"
-                                href="{{ url('admin/trading-account-details-live') }}">
+                        <li class="{{ Route::is('agency.show') ? 'active' : '' }}">
+                            <a class="d-flex align-items-center" href="{{ route('agency.show') }}">
                                 <i data-feather="circle"></i>
-                                <span class="menu-item text-truncate" data-i18n="Live Trading Account List">
-                                    {{ __('admin-menue-left.Live_Trading_Account_List') }} </span>
-                            </a>
-                        </li>
-                        <li class="{{ Request::is('admin/trading-account-details-demo') ? 'active' : '' }}">
-                            <a class="d-flex align-items-center"
-                                href="{{ url('admin/trading-account-details-demo') }}">
-                                <i data-feather="circle"></i>
-                                <span class="menu-item text-truncate" data-i18n="Demo Trading Account List">
-                                    {{ __('admin-menue-left.Demo_Trading_Account_List') }} </span>
+                                <span class="menu-item text-truncate">
+                                    {{ __('Agencies') }} </span>
                             </a>
                         </li>
                     </ul>
