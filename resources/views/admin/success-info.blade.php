@@ -881,7 +881,6 @@
             dataRetrive();
             $('[data-filte-by]').click(function() {
                 var filterType = $(this).attr('data-filte-by'); // Get the filter type
-                console.log(filterType);
                 dataRetrive(filterType); // Call dataRetrieve function with filter type
             });
 
