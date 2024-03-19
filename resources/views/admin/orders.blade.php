@@ -187,7 +187,7 @@
                                                 <th>{{ __('WWW') }}</th>
                                                 <th>{{ __('Email') }}</th>
                                                 <th>{{ __('Managing Director/Contact') }}</th>
-                                                <th>{{ __('Agency') }}</th>
+                                                <th>{{ __('IP') }}</th>
                                                 <th>{{ __('Date') }}</th>
                                             </tr>
                                         </thead>
@@ -201,6 +201,24 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalFullTitle">View Order PDF</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0 overflow-hidden">
+
+                    <iframe id="pdfViewer" src="{{ asset('test-name-1710354746.pdf') }}"
+                        style="width: 100%; height:100%;"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 
 @stop
@@ -370,18 +388,19 @@
                         "data": "managing_director"
                     },
                     {
-                        "data": "agency_id"
+                        "data": "ip"
                     },
                     {
-                        "data": "date"
+                        "data": "date",
+
                     },
                 ],
                 "columnDefs": [{
-                    "targets": 1,
+                    "targets": 10,
                     "orderable": false
                 }],
                 "order": [
-                    [5, 'desc']
+                    [5, 'asc']
                 ],
                 "drawCallback": function(settings) {
                     var rows = this.fnGetData();
@@ -428,8 +447,21 @@
                             $(__this).find('.w').html(feather.icons['minus'].toSvg());
                         }
                     }
+                    if (feather) {
+                        feather.replace({
+                            width: 14,
+                            height: 14
+                        });
+                    }
+
                 }
             })
+        });
+
+        $(document).on('click', '[data-pdf-show]', function() {
+            let pdfUrl = $(this).data('pdf-show');
+            $('#pdfViewer').attr('src', pdfUrl);
+            $('#fullscreenModal').modal('show');
         });
 
 

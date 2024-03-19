@@ -19,10 +19,12 @@ return new class extends Migration
             $table->string('city');
             $table->string('country');
             $table->string('telephone');
-            $table->string('www');
+            $table->string('www')->nullable();
             $table->string('mail_address');
             $table->string('managing_director');
             $table->unsignedBigInteger('agency_id');
+            $table->string('ip');
+            $table->string('pdf_url');
             $table->timestamps();
 
             $table->foreign('agency_id')->references('id')->on('agencies');

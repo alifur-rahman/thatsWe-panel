@@ -25,12 +25,12 @@ class OrderController extends Controller
         $draw = $request->input('draw');
         $start = $request->input('start');
         $length = $request->input('length');
-        $order = $_GET['order'][0]["column"];
-        $orderDir = $_GET["order"][0]["dir"];
+        $order = $_POST['order'][0]["column"];
+        $orderDir = $_POST["order"][0]["dir"];
         $columns = ['company_name', 'street', 'zip', 'city', 'country', 'telephone','www','mail_address','managing_director','agency_id'];
         $orderby = $columns[$order];
         // select type= 0 for trader 
-        $result = order::select('id', 'company_name', 'street', 'zip', 'city', 'country', 'telephone','www','mail_address','managing_director','agency_id');
+        $result = order::select('*');
         // return $result;
 
         //email filter
@@ -79,7 +79,7 @@ class OrderController extends Controller
             $data[$i]["www"]     = $value->www;
             $data[$i]["mail_address"]     = $value->mail_address;
             $data[$i]["managing_director"]     = $value->managing_director;
-            $data[$i]["agency_id"]     = $value->agency_id;
+            $data[$i]["ip"]     = $value->ip;
             $data[$i]["date"]    = date('d M y', strtotime($value->created_at));
             $i++;
         }
@@ -93,95 +93,10 @@ class OrderController extends Controller
     public function data_retrive_details(Request $request)
     {
         $id = $request->input('id');
-        $causer = order::find($id);
+        $itemData = Order::with('agency')->find($id);
         
+        $description = view('admin.rander.order-details', ['itemData' => $itemData])->render();
        
-        $description = '<tr class="description" style="display:none">
-            <td >
-                <div class="details-section-dark dt-details border-start-3 border-start-primary p-2">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="rounded-0 w-75">
-                                <table class="table table-responsive tbl-balance">
-                                    <tr>
-                                        <th>Last Login</th>
-                                        <td>fasdf</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Status</th>
-                                        <td>sadfasdf</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 d-flex justfy-content-between">    
-                            <div class="rounded-0 w-100">
-                                <table class="table table-responsive tbl-trader-details">
-                                    <tr>
-                                        <th>User Category</th>
-                                        <td>asdf</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Country</th>
-                                        <td>asdf</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Email</th>
-                                        <td>fasd</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Phone</th>
-                                        <td>asdf</td>
-                                    </tr>
-                                </table>
-                            </div> 
-                           
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-lg-12">
-                            <!-- Filled Tabs starts -->
-                            <div class="col-xl-12 col-lg-12">
-                                <div class=" p-0">
-                                    <div class=" p-0">
-                                        <table class="tbl-activity-report table datatable-inner dt-inner-table-dark">
-                                            <theader>
-                                                <tr>
-                                                    <th>Action IP</th>
-                                                    <th>Action Country</th>
-                                                    <th>Action city</th>
-                                                    <th>Action Region</th>
-                                                    <th>Action at</th>
-                                                </tr>
-                                            </theader>
-                                            <theader>
-                                                <tr>
-                                                    <td>asdf</td>
-                                                    <td>asdf</td>
-                                                    <td>hasdf</td>
-                                                    <td>asdf</td>
-                                                    <td>sdf</td>
-                                                </tr>
-                                            </theader>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                 
-                    <div class="clearfix"></div>
-                </div>
-            </td>
-            <td class="d-none">&nbsp;</td>
-            <td class="d-none">&nbsp;</td>
-            <td class="d-none">&nbsp;</td>
-            <td class="d-none">&nbsp;</td>
-
-
-           
-        </tr>';
         $data = [
             'status' => true,
             'description' => $description
