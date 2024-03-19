@@ -17,7 +17,7 @@
 
                 </div>
 
-                <img class="img-fluid" src="{{ $single->app_logo }}" alt="{{ $single->app_name }}">
+                <img class="img-fluid" src="{{ url('../' . $single->app_logo) }}" alt="{{ $single->app_name }}">
                 <h4 class="card-title mt-2">App Name : {{ $single->app_name }}</h4>
                 <h6 class="card-subtitle text-muted "> Logo No : {{ $single->app_no }}</h6>
             </div>

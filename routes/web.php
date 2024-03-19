@@ -34,7 +34,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::post('/success-info-delete', [App\Http\Controllers\admin\SuccessInfoController::class, 'delete'])->name('content.success-info.delete');
         Route::post('/success-info-update-modal', [App\Http\Controllers\admin\SuccessInfoController::class, 'fetchUpdateModal'])->name('info_update.fetch');
 
-
         // app images 
         Route::get('/app-images', [App\Http\Controllers\admin\AppImagesController::class, 'index'])->name('content.app-images');
         Route::post('/app-images-retrieve', [App\Http\Controllers\admin\AppImagesController::class, 'data_retrive'])->name('content.app-image-retrieve');
@@ -51,6 +50,13 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::post('/update', [App\Http\Controllers\admin\AgencyController::class, 'update'])->name('agency.update');
         Route::post('/delete', [App\Http\Controllers\admin\AgencyController::class, 'delete'])->name('agency.delete');
         Route::post('/update-modal', [App\Http\Controllers\admin\AgencyController::class, 'fetchUpdateModal'])->name('agency.update.fetch');
+    });
+
+    // manage orders 
+    Route::group(['prefix' => 'order'], function () {
+        Route::get('/show', [App\Http\Controllers\admin\OrderController::class, 'index'])->name('order.show');
+        Route::any('/show/retrieve', [App\Http\Controllers\admin\OrderController::class, 'data_retrive'])->name('order.show.retrieve');
+        Route::any('/details/retrieve', [App\Http\Controllers\admin\OrderController::class, 'data_retrive_details'])->name('order.details.retrieve');
     });
 
 });

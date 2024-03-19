@@ -339,8 +339,6 @@
 
 
 
-
-
         $(document).on('click', '[data-success-delete]', function() {
             // Get the ID of the todo item to be deleted
             var todoItemId = $(this).data('success-delete');

@@ -98,8 +98,8 @@
                                         aria-labelledby="esTitle" data-bs-parent="#accordionTitle">
                                         <div class="accordion-body">
                                             <div class="form-floating mb-0">
-                                                <textarea class="form-control char-textarea" id="textarea-title-sp" rows="2" name="title_sp"
-                                                    placeholder="Write In Español" style="height: 50px"> {{ $todoItem->title_sp }} </textarea>
+                                                <textarea class="form-control char-textarea" id="textarea-title-sp" rows="2" name="title_es"
+                                                    placeholder="Write In Español" style="height: 50px"> {{ $todoItem->title_es }} </textarea>
                                                 <label for="textarea-title-sp">Write
                                                     In Español</label>
                                             </div>
@@ -161,8 +161,8 @@
                                         aria-labelledby="porTitle" data-bs-parent="#accordionTitle">
                                         <div class="accordion-body">
                                             <div class="form-floating mb-0">
-                                                <textarea class="form-control char-textarea" name="title_po" id="textarea-title-por" rows="2"
-                                                    placeholder="Write In Português" style="height: 50px"> {{ $todoItem->title_po }} </textarea>
+                                                <textarea class="form-control char-textarea" name="title_pt" id="textarea-title-por" rows="2"
+                                                    placeholder="Write In Português" style="height: 50px"> {{ $todoItem->title_pt }} </textarea>
                                                 <label for="textarea-title-por">Write
                                                     In Português</label>
                                             </div>
@@ -203,8 +203,8 @@
                                         aria-labelledby="nedTitle" data-bs-parent="#accordionTitle">
                                         <div class="accordion-body">
                                             <div class="form-floating mb-0">
-                                                <textarea class="form-control char-textarea" id="textarea-title-ned" rows="2" name="title_ne"
-                                                    placeholder="Write In Nederlands" style="height: 50px"> {{ $todoItem->title_ne }} </textarea>
+                                                <textarea class="form-control char-textarea" id="textarea-title-ned" rows="2" name="title_nl"
+                                                    placeholder="Write In Nederlands" style="height: 50px"> {{ $todoItem->title_nl }} </textarea>
                                                 <label for="textarea-title-ned">Write
                                                     In Nederlands</label>
                                             </div>
@@ -308,7 +308,7 @@
                                         <div class="accordion-body">
                                             <div class="form-floating mb-0">
                                                 <textarea class="form-control char-textarea" id="textarea-Desc-sp" rows="2" placeholder="Write In Español"
-                                                    name="desc_sp" style="height: 50px"> {{ $todoItem->desc_sp }}</textarea>
+                                                    name="desc_es" style="height: 50px"> {{ $todoItem->desc_es }}</textarea>
                                                 <label for="textarea-Desc-sp">Write
                                                     In Español</label>
                                             </div>
@@ -369,8 +369,8 @@
                                         aria-labelledby="porDesc" data-bs-parent="#accordionDesc">
                                         <div class="accordion-body">
                                             <div class="form-floating mb-0">
-                                                <textarea class="form-control char-textarea" id="textarea-Desc-por" rows="2" name="desc_po"
-                                                    placeholder="Write In Português" style="height: 50px"> {{ $todoItem->desc_po }}</textarea>
+                                                <textarea class="form-control char-textarea" id="textarea-Desc-por" rows="2" name="desc_pt"
+                                                    placeholder="Write In Português" style="height: 50px"> {{ $todoItem->desc_pt }}</textarea>
                                                 <label for="textarea-Desc-por">Write
                                                     In Português</label>
                                             </div>
@@ -412,8 +412,8 @@
                                         aria-labelledby="nedDesc" data-bs-parent="#accordionDesc">
                                         <div class="accordion-body">
                                             <div class="form-floating mb-0">
-                                                <textarea class="form-control char-textarea" id="textarea-Desc-ned" rows="2" name="desc_ne"
-                                                    placeholder="Write In Nederlands" style="height: 50px"> {{ $todoItem->desc_ne }}</textarea>
+                                                <textarea class="form-control char-textarea" id="textarea-Desc-ned" rows="2" name="desc_nl"
+                                                    placeholder="Write In Nederlands" style="height: 50px"> {{ $todoItem->desc_nl }}</textarea>
                                                 <label for="textarea-Desc-ned">Write
                                                     In Nederlands</label>
                                             </div>

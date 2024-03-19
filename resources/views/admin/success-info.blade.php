@@ -50,6 +50,10 @@
             height: 100%;
             list-style: decimal;
         }
+
+        .char-textarea {
+            height: 150px !important;
+        }
     </style>
 @stop
 <!-- END: Page CSS-->
@@ -204,8 +208,8 @@
                                                                             <div class="accordion-body">
 
                                                                                 <div class="form-floating mb-0">
-                                                                                    <textarea class="form-control char-textarea" id="textarea-title-en" rows="2" name="title_en"
-                                                                                        placeholder="Write In English" style="height: 50px"></textarea>
+                                                                                    <textarea class="form-control char-textarea" id="textarea-title-en" rows="5" name="title_en"
+                                                                                        placeholder="Write In English"></textarea>
                                                                                     <label for="textarea-title-en">Write
                                                                                         In English</label>
                                                                                 </div>
@@ -231,8 +235,8 @@
                                                                             <div class="accordion-body">
 
                                                                                 <div class="form-floating mb-0">
-                                                                                    <textarea class="form-control char-textarea" id="textarea-title-de" rows="2" placeholder="Write In English"
-                                                                                        name="title_de" style="height: 50px"></textarea>
+                                                                                    <textarea class="form-control char-textarea" id="textarea-title-de" rows="5" placeholder="Write In English"
+                                                                                        name="title_de"></textarea>
                                                                                     <label for="textarea-title-de">Write
                                                                                         In Deutsch</label>
                                                                                 </div>
@@ -257,8 +261,8 @@
                                                                             data-bs-parent="#accordionTitle">
                                                                             <div class="accordion-body">
                                                                                 <div class="form-floating mb-0">
-                                                                                    <textarea class="form-control char-textarea" id="textarea-title-fr" rows="2" placeholder="Write In Français"
-                                                                                        name="title_fr" style="height: 50px"></textarea>
+                                                                                    <textarea class="form-control char-textarea" id="textarea-title-fr" rows="5" placeholder="Write In Français"
+                                                                                        name="title_fr"></textarea>
                                                                                     <label for="textarea-title-fr">Write
                                                                                         In Français</label>
                                                                                 </div>
@@ -281,8 +285,8 @@
                                                                             data-bs-parent="#accordionTitle">
                                                                             <div class="accordion-body">
                                                                                 <div class="form-floating mb-0">
-                                                                                    <textarea class="form-control char-textarea" id="textarea-title-sp" rows="2" name="title_sp"
-                                                                                        placeholder="Write In Español" style="height: 50px"></textarea>
+                                                                                    <textarea class="form-control char-textarea" id="textarea-title-sp" rows="5" name="title_es"
+                                                                                        placeholder="Write In Español"></textarea>
                                                                                     <label for="textarea-title-sp">Write
                                                                                         In Español</label>
                                                                                 </div>
@@ -308,7 +312,7 @@
                                                                                     <textarea
                                                                                         class="form-control 
                                                                                  char-textarea"
-                                                                                        name="title_tr" id="textarea-title-tu" rows="2" placeholder="Write In Türkçe" style="height: 50px"></textarea>
+                                                                                        name="title_tr" id="textarea-title-tu" rows="5" placeholder="Write In Türkçe"></textarea>
                                                                                     <label for="textarea-title-tu">Write
                                                                                         In Türkçe</label>
                                                                                 </div>
@@ -332,8 +336,8 @@
                                                                             data-bs-parent="#accordionTitle">
                                                                             <div class="accordion-body">
                                                                                 <div class="form-floating mb-0">
-                                                                                    <textarea class="form-control char-textarea" name="title_it" id="textarea-title-ita" rows="2"
-                                                                                        placeholder="Write In Italiano" style="height: 50px"></textarea>
+                                                                                    <textarea class="form-control char-textarea" name="title_it" id="textarea-title-ita" rows="5"
+                                                                                        placeholder="Write In Italiano"></textarea>
                                                                                     <label for="textarea-title-ita">Write
                                                                                         In Italiano</label>
                                                                                 </div>
@@ -357,8 +361,8 @@
                                                                             data-bs-parent="#accordionTitle">
                                                                             <div class="accordion-body">
                                                                                 <div class="form-floating mb-0">
-                                                                                    <textarea class="form-control char-textarea" name="title_po" id="textarea-title-por" rows="2"
-                                                                                        placeholder="Write In Português" style="height: 50px"></textarea>
+                                                                                    <textarea class="form-control char-textarea" name="title_pt" id="textarea-title-por" rows="5"
+                                                                                        placeholder="Write In Português"></textarea>
                                                                                     <label for="textarea-title-por">Write
                                                                                         In Português</label>
                                                                                 </div>
@@ -382,8 +386,8 @@
                                                                             data-bs-parent="#accordionTitle">
                                                                             <div class="accordion-body">
                                                                                 <div class="form-floating mb-0">
-                                                                                    <textarea class="form-control char-textarea" name="title_da" id="textarea-title-dan" rows="2"
-                                                                                        placeholder="Write In Dansk" style="height: 50px"></textarea>
+                                                                                    <textarea class="form-control char-textarea" name="title_da" id="textarea-title-dan" rows="5"
+                                                                                        placeholder="Write In Dansk"></textarea>
                                                                                     <label for="textarea-title-dan">Write
                                                                                         In Dansk</label>
                                                                                 </div>
@@ -407,8 +411,8 @@
                                                                             data-bs-parent="#accordionTitle">
                                                                             <div class="accordion-body">
                                                                                 <div class="form-floating mb-0">
-                                                                                    <textarea class="form-control char-textarea" id="textarea-title-ned" rows="2" name="title_ne"
-                                                                                        placeholder="Write In Nederlands" style="height: 50px"></textarea>
+                                                                                    <textarea class="form-control char-textarea" id="textarea-title-ned" rows="5" name="title_nl"
+                                                                                        placeholder="Write In Nederlands"></textarea>
                                                                                     <label for="textarea-title-ned">Write
                                                                                         In Nederlands</label>
                                                                                 </div>
@@ -451,8 +455,8 @@
                                                                             <div class="accordion-body">
 
                                                                                 <div class="form-floating mb-0">
-                                                                                    <textarea class="form-control char-textarea" id="textarea-Desc-en" rows="2" placeholder="Write In English"
-                                                                                        name="desc_en" style="height: 50px"></textarea>
+                                                                                    <textarea class="form-control char-textarea" id="textarea-Desc-en" rows="5" placeholder="Write In English"
+                                                                                        name="desc_en"></textarea>
                                                                                     <label for="textarea-Desc-en">Write
                                                                                         In English</label>
                                                                                 </div>
@@ -478,8 +482,8 @@
                                                                             <div class="accordion-body">
 
                                                                                 <div class="form-floating mb-0">
-                                                                                    <textarea class="form-control char-textarea" id="textarea-Desc-de" rows="2" placeholder="Write In English"
-                                                                                        name="desc_de" style="height: 50px"></textarea>
+                                                                                    <textarea class="form-control char-textarea" id="textarea-Desc-de" rows="5" placeholder="Write In English"
+                                                                                        name="desc_de"></textarea>
                                                                                     <label for="textarea-Desc-de">Write
                                                                                         In Deutsch</label>
                                                                                 </div>
@@ -504,8 +508,8 @@
                                                                             data-bs-parent="#accordionDesc">
                                                                             <div class="accordion-body">
                                                                                 <div class="form-floating mb-0">
-                                                                                    <textarea class="form-control char-textarea" id="textarea-Desc-fr" rows="2" name="desc_fr"
-                                                                                        placeholder="Write In Français" style="height: 50px"></textarea>
+                                                                                    <textarea class="form-control char-textarea" id="textarea-Desc-fr" rows="5" name="desc_fr"
+                                                                                        placeholder="Write In Français"></textarea>
                                                                                     <label for="textarea-Desc-fr">Write
                                                                                         In Français</label>
                                                                                 </div>
@@ -528,8 +532,8 @@
                                                                             data-bs-parent="#accordionDesc">
                                                                             <div class="accordion-body">
                                                                                 <div class="form-floating mb-0">
-                                                                                    <textarea class="form-control char-textarea" id="textarea-Desc-sp" rows="2" placeholder="Write In Español"
-                                                                                        name="desc_sp" style="height: 50px"></textarea>
+                                                                                    <textarea class="form-control char-textarea" id="textarea-Desc-sp" rows="5" placeholder="Write In Español"
+                                                                                        name="desc_es"></textarea>
                                                                                     <label for="textarea-Desc-sp">Write
                                                                                         In Español</label>
                                                                                 </div>
@@ -552,8 +556,8 @@
                                                                             data-bs-parent="#accordionDesc">
                                                                             <div class="accordion-body">
                                                                                 <div class="form-floating mb-0">
-                                                                                    <textarea class="form-control char-textarea" id="textarea-Desc-tu" name="desc_tr" rows="2"
-                                                                                        placeholder="Write In Türkçe" style="height: 50px"></textarea>
+                                                                                    <textarea class="form-control char-textarea" id="textarea-Desc-tu" name="desc_tr" rows="5"
+                                                                                        placeholder="Write In Türkçe"></textarea>
                                                                                     <label for="textarea-Desc-tu">Write
                                                                                         In Türkçe</label>
                                                                                 </div>
@@ -577,8 +581,8 @@
                                                                             data-bs-parent="#accordionDesc">
                                                                             <div class="accordion-body">
                                                                                 <div class="form-floating mb-0">
-                                                                                    <textarea class="form-control char-textarea" id="textarea-Desc-ita" rows="2" name="desc_it"
-                                                                                        placeholder="Write In Italiano" style="height: 50px"></textarea>
+                                                                                    <textarea class="form-control char-textarea" id="textarea-Desc-ita" rows="5" name="desc_it"
+                                                                                        placeholder="Write In Italiano"></textarea>
                                                                                     <label for="textarea-Desc-ita">Write
                                                                                         In Italiano</label>
                                                                                 </div>
@@ -602,8 +606,8 @@
                                                                             data-bs-parent="#accordionDesc">
                                                                             <div class="accordion-body">
                                                                                 <div class="form-floating mb-0">
-                                                                                    <textarea class="form-control char-textarea" id="textarea-Desc-por" rows="2" name="desc_po"
-                                                                                        placeholder="Write In Português" style="height: 50px"></textarea>
+                                                                                    <textarea class="form-control char-textarea" id="textarea-Desc-por" rows="5" name="desc_pt"
+                                                                                        placeholder="Write In Português"></textarea>
                                                                                     <label for="textarea-Desc-por">Write
                                                                                         In Português</label>
                                                                                 </div>
@@ -630,7 +634,7 @@
                                                                                     <textarea
                                                                                         class="form-control 
                                                                                     char-textarea"
-                                                                                        id="textarea-Desc-dan" rows="2" placeholder="Write In Dansk" name="desc_da" style="height: 50px"></textarea>
+                                                                                        id="textarea-Desc-dan" rows="5" placeholder="Write In Dansk" name="desc_da"></textarea>
                                                                                     <label for="textarea-Desc-dan">Write
                                                                                         In Dansk</label>
                                                                                 </div>
@@ -654,8 +658,8 @@
                                                                             data-bs-parent="#accordionDesc">
                                                                             <div class="accordion-body">
                                                                                 <div class="form-floating mb-0">
-                                                                                    <textarea class="form-control char-textarea" id="textarea-Desc-ned" rows="2" name="desc_ne"
-                                                                                        placeholder="Write In Nederlands" style="height: 50px"></textarea>
+                                                                                    <textarea class="form-control char-textarea" id="textarea-Desc-ned" rows="5" name="desc_nl"
+                                                                                        placeholder="Write In Nederlands"></textarea>
                                                                                     <label for="textarea-Desc-ned">Write
                                                                                         In Nederlands</label>
                                                                                 </div>
@@ -733,7 +737,7 @@
     <script src="{{ asset('admin-assets/app-assets/vendors/js/vendors.min.js') }}"></script>
     <script src="{{ asset('admin-assets/app-assets/vendors/js/editors/quill/katex.min.js') }}"></script>
     <script src="{{ asset('admin-assets/app-assets/vendors/js/editors/quill/highlight.min.js') }}"></script>
-    {{-- <script src="{{ asset('admin-assets/app-assets/vendors/js/editors/quill/quill.min.js') }}"></script> --}}
+    <script src="{{ asset('admin-assets/app-assets/vendors/js/editors/quill/quill.min.js') }}"></script>
     <script src="{{ asset('admin-assets/app-assets/vendors/js/forms/select/select2.full.min.js') }}"></script>
     <script src="{{ asset('admin-assets/app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js') }}"></script>
     <script src="{{ asset('admin-assets/app-assets/vendors/js/extensions/dragula.min.js') }}"></script>
@@ -743,6 +747,11 @@
 @section('page-js')
     <script src="{{ asset('admin-assets/app-assets/js/scripts/pages/app-todo.js') }}"></script>
     <script>
+        var quill = new Quill('.char-textarea', {
+
+
+        });
+
         var newTaskModal = $('#new-task-modal'),
             addTaskModal = $('#add-new-task-modal'),
             overlay = $('.body-content-overlay'),
@@ -846,6 +855,7 @@
                 notify('success', data.message, 'Add Success Info');
                 cencelModal.trigger('click');
                 dataRetrive();
+                $('#form-modal-success')[0].reset();
             } else {
                 if (data.message != null) {
                     notify('error', data.message, 'Add Success Info');
