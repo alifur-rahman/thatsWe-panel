@@ -350,6 +350,30 @@
                                     {{ __('App Images') }} </span>
                             </a>
                         </li>
+                        <li class="{{ Route::is('content.order.show') ? 'active' : '' }}">
+                            <a class="d-flex align-items-center" href="{{ route('content.order.show') }}">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate">
+                                    {{ __('Order Page') }} </span>
+                                <span class="badge badge-light-success rounded-pill ms-auto me-1">New</span>
+                            </a>
+                        </li>
+                        <li class="{{ Route::is('content.order-pdf.show') ? 'active' : '' }}">
+                            <a class="d-flex align-items-center" href="{{ route('content.order-pdf.show') }}">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate">
+                                    {{ __('Order PDF ') }} </span>
+                                <span class="badge badge-light-success rounded-pill ms-auto me-1">New</span>
+                            </a>
+                        </li>
+                        <li class="{{ Route::is('content.policy.show') ? 'active' : '' }}">
+                            <a class="d-flex align-items-center" href="{{ route('content.policy.show') }}">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate">
+                                    {{ __('Policy Page ') }} </span>
+                                <span class="badge badge-light-success rounded-pill ms-auto me-1">New</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <!-- END: content management -->
@@ -366,7 +390,7 @@
                             <a class="d-flex align-items-center" href="{{ route('agency.show') }}">
                                 <i data-feather="circle"></i>
                                 <span class="menu-item text-truncate">
-                                    {{ __('Agencies') }} </span>
+                                    {{ __('Travel Agencies') }} </span>
                             </a>
                         </li>
                     </ul>
@@ -434,8 +458,8 @@
         <p class="clearfix mb-0"><span class="float-md-start d-block d-md-inline-block mt-25">
                 Copyright &copy; 2024 <a href="https://thatswe.de" target="_blank">ThatsWE</a>. All rights
                 reserved.</span>
-            <span class="float-md-end d-none d-md-block">Develop By : <a href="https://makersstack.com"
-                    target="_blank">makersstack</a><i data-feather="heart"></i></span>
+            <span class="float-md-end d-none d-md-block">Develop By : <a href="https://alifur-rahman.netlify.app/"
+                    target="_blank">Alifur Rahman</a><i data-feather="heart"></i></span>
         </p>
     </footer>
     <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>

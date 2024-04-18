@@ -376,7 +376,7 @@
                                     }
                                 });
                             } else {
-                                notify('error', data.message, 'Agency Deleting');
+                                notify('error', response.message, 'Agency Deleting');
                             }
                         },
                         error: function(xhr, status, error) {

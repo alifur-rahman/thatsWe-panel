@@ -27,7 +27,7 @@ class OrderController extends Controller
         $length = $request->input('length');
         $order = $_POST['order'][0]["column"];
         $orderDir = $_POST["order"][0]["dir"];
-        $columns = ['company_name', 'street', 'zip', 'city', 'country', 'telephone','www','mail_address','managing_director','agency_id'];
+       $columns = ['company_name', 'street', 'zip', 'city', 'country', 'telephone','www','mail_address','managing_director','ip','created_at'];
         $orderby = $columns[$order];
         // select type= 0 for trader 
         $result = order::select('*');
@@ -61,7 +61,7 @@ class OrderController extends Controller
 
 
         $count = $result->count(); // <------count total rows
-        $result = $result->orderby($orderby, $orderDir)->skip($start)->take($length)->get();
+        $result = $result->orderby($orderby, $orderDir)->orderby('id', 'desc')->skip($start)->take($length)->get();
         $data = array();
         $i = 0;
 
@@ -102,6 +102,19 @@ class OrderController extends Controller
             'description' => $description
         ];
         return Response::json($data);
+    }
+
+    public function delete(Request $request)
+    {
+        if ($request->ajax()) {
+            $orderInfo = Order::find($request->input('id'));
+
+            
+            // Delete record from the database
+            $orderInfo->delete();
+    
+            return response()->json(['status' => true, 'message' => 'Data deleted successfully']);
+        }
     }
    
 }

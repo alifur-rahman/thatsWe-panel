@@ -87,6 +87,13 @@
                             <span>Download PDF</span>
                         </a>
 
+                    </div>
+                    <div class="d-flex justify-content-between flex-row mt-2 gap-2">
+                        <button type="button" class=" w-100 btn btn-outline-danger update-btn"
+                            data-success-delete="{{ $itemData->id }}">
+                            <i data-feather="trash" class="me-25"></i>
+                            Delete Order
+                        </button>
 
                     </div>
 

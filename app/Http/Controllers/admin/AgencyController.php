@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 use App\Models\admin\agencies;
+use App\Models\admin\order;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Database\Eloquent\Collection;
@@ -149,6 +150,10 @@ class AgencyController extends Controller
     {
         if ($request->ajax()) {
             $successInfo = agencies::find($request->input('id'));
+
+            if (order::where('agency_id', $successInfo->id)->exists()) {
+                return response()->json(['status' => false, 'message' => 'Cannot delete agency. Related orders exist.']);
+            }
     
             // Delete files from the directory
             $screen_logo_path = $successInfo->app_logo;
@@ -164,6 +169,7 @@ class AgencyController extends Controller
             return response()->json(['status' => true, 'message' => 'Data deleted successfully']);
         }
     }
+
 
     public function fetchUpdateModal(Request $request)
     {
