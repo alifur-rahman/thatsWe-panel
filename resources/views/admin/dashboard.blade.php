@@ -42,7 +42,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <div>
-                                    <h2 class="fw-bolder mb-0">86</h2>
+                                    <h2 class="fw-bolder mb-0">{{ $totalOrders ?? 'N/A' }}</h2>
                                     <p class="card-text">Total Order</p>
                                 </div>
                                 <div class="avatar bg-light-primary p-50 m-0">
@@ -57,7 +57,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <div>
-                                    <h2 class="fw-bolder mb-0">40</h2>
+                                    <h2 class="fw-bolder mb-0">{{ $totalAgencies ?? 'N/A' }}</h2>
                                     <p class="card-text">Total Agency</p>
                                 </div>
                                 <div class="avatar bg-light-success p-50 m-0">
@@ -72,7 +72,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <div>
-                                    <h2 class="fw-bolder mb-0">10</h2>
+                                    <h2 class="fw-bolder mb-0">N/A</h2>
                                     <p class="card-text">Total Offer submission</p>
                                 </div>
                                 <div class="avatar bg-light-danger p-50 m-0">
@@ -87,7 +87,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <div>
-                                    <h2 class="fw-bolder mb-0">13</h2>
+                                    <h2 class="fw-bolder mb-0">N/A</h2>
                                     <p class="card-text">Total Recommendation</p>
                                 </div>
                                 <div class="avatar bg-light-warning p-50 m-0">

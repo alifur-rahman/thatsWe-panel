@@ -349,6 +349,11 @@
                 ],
                 "ajax": {
                     "url": "{{ route('order.show.retrieve') }}",
+                    "type": "POST",
+                    "headers": {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr(
+                            'content') // Include CSRF token in the headers
+                    },
                     "data": function(d) {
                         return $.extend({}, d, {
                             "month": $("#month").val(),
@@ -395,12 +400,9 @@
 
                     },
                 ],
-                "columnDefs": [{
-                    "targets": 10,
-                    "orderable": false
-                }],
+
                 "order": [
-                    [5, 'asc']
+                    [10, 'desc']
                 ],
                 "drawCallback": function(settings) {
                     var rows = this.fnGetData();
@@ -421,6 +423,55 @@
                 $('#month').prop('selectedIndex', 0).trigger("change");
                 $("#filter-form").trigger('reset');
                 datatable.draw();
+            });
+
+            $(document).on('click', '[data-success-delete]', function() {
+                // Get the ID of the todo item to be deleted
+                var todoItemId = $(this).data('success-delete');
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it!',
+                    customClass: {
+                        confirmButton: 'btn btn-primary',
+                        cancelButton: 'btn btn-outline-danger ms-1'
+                    },
+                    buttonsStyling: false
+                }).then(function(result) {
+                    if (result.value) {
+                        $.ajax({
+                            type: "POST",
+                            url: "{{ route('order.delete') }}",
+                            data: {
+                                id: todoItemId,
+                                _token: '{{ csrf_token() }}' // Include CSRF token
+                            },
+                            dataType: "json",
+                            success: function(response) {
+                                if (response.status === true) {
+                                    datatable.draw();
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Deleted!',
+                                        text: 'Your file has been deleted.',
+                                        customClass: {
+                                            confirmButton: 'btn btn-success'
+                                        }
+                                    });
+                                } else {
+                                    notify('error', response.message, 'Order Deleting');
+                                }
+                            },
+                            error: function(xhr, status, error) {
+                                console.error('AJAX Error: ' + error);
+                                alert('An error occurred while deleting the item.');
+                            }
+                        });
+                    }
+                });
+
             });
 
         }
