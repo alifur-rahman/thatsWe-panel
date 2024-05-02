@@ -84,11 +84,14 @@
                                 </div>
                                 <div class="card-body">
                                     <p class="card-text">This section manages the content of the Privacy Policy pages: <a
-                                            href="https://thatswe.de/policy" target="_blank">www.thatswe.de/policy</a>. If
+                                            href="https://thatswe.de/policy" target="_blank">www.thatswe.de/policy</a> and
+                                        <a href="https://thatssoft.de/policy" target="_blank">www.thatssoft.de/policy</a>.
+                                        If
                                         you need to change the content of the Privacy Policy in every language, simply make
                                         changes in the "from" field in every language. 'Data Protection' card will manage
                                         the
-                                        Data Protection content. as same as 'Imprint'</p>
+                                        Data Protection content. as same as 'Imprint'
+                                    </p>
                                     <div class="demo-spacing-0">
                                         <div class="alert alert-info" role="alert">
                                             <h4 class="alert-heading">Basic Steps :</h4>
@@ -100,7 +103,9 @@
                                                 <p class="card-text  mb-1"> 3. Click on "Submit" button. </p>
                                                 <p class="card-text mb-1"> 4. You will get a success message.</p>
                                                 <p class="card-text mb-1"> 5. Go <a href="https://thatswe.de/policy"
-                                                        target="_blank">www.thatswe.de/policy</a> and reload to see the
+                                                        target="_blank">www.thatswe.de/policy</a> and <a
+                                                        href="https://thatssoft.de/policy"
+                                                        target="_blank">www.thatssoft.de/policy</a> and reload to see the
                                                     Changes</p>
                                             </div>
                                         </div>

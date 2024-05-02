@@ -355,7 +355,7 @@
                                 <i data-feather="circle"></i>
                                 <span class="menu-item text-truncate">
                                     {{ __('Order Page') }} </span>
-                                <span class="badge badge-light-success rounded-pill ms-auto me-1">New</span>
+                                {{-- <span class="badge badge-light-success rounded-pill ms-auto me-1">New</span> --}}
                             </a>
                         </li>
                         <li class="{{ Route::is('content.order-pdf.show') ? 'active' : '' }}">
@@ -363,7 +363,7 @@
                                 <i data-feather="circle"></i>
                                 <span class="menu-item text-truncate">
                                     {{ __('Order PDF ') }} </span>
-                                <span class="badge badge-light-success rounded-pill ms-auto me-1">New</span>
+                                {{-- <span class="badge badge-light-success rounded-pill ms-auto me-1">New</span> --}}
                             </a>
                         </li>
                         <li class="{{ Route::is('content.policy.show') ? 'active' : '' }}">
@@ -371,7 +371,7 @@
                                 <i data-feather="circle"></i>
                                 <span class="menu-item text-truncate">
                                     {{ __('Policy Page ') }} </span>
-                                <span class="badge badge-light-success rounded-pill ms-auto me-1">New</span>
+                                {{-- <span class="badge badge-light-success rounded-pill ms-auto me-1">New</span> --}}
                             </a>
                         </li>
                     </ul>
@@ -391,6 +391,14 @@
                                 <i data-feather="circle"></i>
                                 <span class="menu-item text-truncate">
                                     {{ __('Travel Agencies') }} </span>
+                            </a>
+                        </li>
+                        <li class="{{ Route::is('agency.zip.show') ? 'active' : '' }}">
+                            <a class="d-flex align-items-center" href="{{ route('agency.zip.show') }}">
+                                <i data-feather="circle"></i>
+                                <span class="menu-item text-truncate">
+                                    {{ __('Agency By ZIP') }} </span>
+                                <span class="badge badge-light-success rounded-pill ms-auto">New</span>
                             </a>
                         </li>
                     </ul>

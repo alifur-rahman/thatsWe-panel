@@ -64,6 +64,14 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::post('/update', [App\Http\Controllers\admin\AgencyController::class, 'update'])->name('agency.update');
         Route::post('/delete', [App\Http\Controllers\admin\AgencyController::class, 'delete'])->name('agency.delete');
         Route::post('/update-modal', [App\Http\Controllers\admin\AgencyController::class, 'fetchUpdateModal'])->name('agency.update.fetch');
+        Route::group(['prefix' => 'zip'], function () {
+            Route::get('/show', [App\Http\Controllers\admin\AgencyZipController::class, 'index'])->name('agency.zip.show');
+            Route::any('/show/retrieve', [App\Http\Controllers\admin\AgencyZipController::class, 'data_retrive'])->name('agency.zip.show.retrieve');
+            Route::post('/add', [App\Http\Controllers\admin\AgencyZipController::class, 'submit'])->name('agency.zip.submit');
+            Route::post('/update-modal', [App\Http\Controllers\admin\AgencyZipController::class, 'fetchUpdateModal'])->name('agency.zip.update.fetch');
+            Route::post('/update', [App\Http\Controllers\admin\AgencyZipController::class, 'update'])->name('agency.zip.update');
+            Route::post('/item/delete', [App\Http\Controllers\admin\AgencyZipController::class, 'delete'])->name('agency.zip.delete');
+        });
     });
 
     // manage orders 
