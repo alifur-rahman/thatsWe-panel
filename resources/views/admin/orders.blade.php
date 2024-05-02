@@ -525,12 +525,30 @@
             if ($(this).val() === 'excel') {
                 $(".buttons-excel").trigger('click');
             }
-            console.log($(this).val());
             if ($(this).val() === 'pdf') {
                 $(".buttons-pdf").trigger('click');
             }
 
         });
+
+        function addAgecnyZipSuccessCallBack(data) {
+            $('#add-item-btn').prop('disabled', false);
+            if (data.status == true) {
+                notify('success', data.message, 'Agency ZIP Adding');
+                // datatable.draw();
+                $(data.resultBoxElement).html(data.appendHtml);
+
+            } else {
+                if (data.message != null) {
+                    notify('error', data.message, 'Agency ZIP Adding');
+                    $.validator("form-add-agency_zip", data.errors);
+
+                } else {
+                    notify('error', 'Something Went Wrong!', 'Agency ZIP Adding');
+                    $.validator("form-add-agency_zip", data.errors);
+                }
+            }
+        }
     </script>
 @stop
 <!-- BEGIN: page JS -->

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\admin\order;
+use App\Models\admin\AgencyZip;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
@@ -94,8 +95,10 @@ class OrderController extends Controller
     {
         $id = $request->input('id');
         $itemData = Order::with('agency')->find($id);
+
+        $isZipAgency = AgencyZip::where('ref', $id)->exists();
         
-        $description = view('admin.rander.order-details', ['itemData' => $itemData])->render();
+        $description = view('admin.rander.order-details', ['itemData' => $itemData], ['isZipAgency' => $isZipAgency])->render();
        
         $data = [
             'status' => true,
@@ -114,6 +117,78 @@ class OrderController extends Controller
             $orderInfo->delete();
     
             return response()->json(['status' => true, 'message' => 'Data deleted successfully']);
+        }
+    }
+
+
+    public function add_to_agency_zip(Request $request){
+        if ($request->ajax()) {
+            $order_id = $request->input('order_id');
+            $orderInfo = Order::find($order_id);
+            if(!$orderInfo){
+                return response()->json(['status' => false, 'message' => 'Order Not Found']);
+            }else{
+                $agencyZip = new AgencyZip();
+                $isZipAgency = $agencyZip->where('ref', $order_id)->exists();
+
+                 // Create a new record in the agency_zip table based on order information
+                if(!$isZipAgency){
+                    $agencyZip = new AgencyZip();
+                    $agencyZip->zip = $orderInfo->zip;
+                    $agencyZip->company_name = $orderInfo->company_name;
+                    $agencyZip->city = $orderInfo->city;
+                    $agencyZip->street = $orderInfo->street;
+                    $agencyZip->site_url = $orderInfo->www;
+                    $agencyZip->telephone = $orderInfo->telephone;
+                    $agencyZip->email = $orderInfo->mail_address;
+
+                    // Assuming $orderInfo->ref contains the reference to associate with the agency_zip record
+                    $agencyZip->ref = $order_id;
+
+                    // Save the agency_zip record
+                    $agencyZip->save();
+                    $resultBoxElement = "#zip_agency_resultBox-".$order_id;
+
+                    $appendHtml = '
+                    <div class="card mb-0">
+                        <div class="card-body border-start-3 border-start-primary">
+                            <div class="d-flex gap-2">
+                                <div class="section-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="100"
+                                        height="100" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="feather feather-thumbs-up icon-trd text-primary">
+                                        <path
+                                            d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="section-data">
+                                    <div class="tv-title">
+                                        This order details already added in agency by
+                                        zip 
+                                    </div>
+                                    <div class="tv-total">
+
+                                        <small> To see all go to <a target="_blank"
+                                                href="'. route('agency.zip.show') .'">Agency By
+                                                ZIP</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>';
+
+                    return response()->json(['status' => true, 'message' => 'Data saved successfully', 'resultBoxElement' => $resultBoxElement, 'appendHtml' => $appendHtml]);
+                }else{
+                    return response()->json(['status' => false, 'message' => 'Already Added']);
+                }
+
+                
+            }
+        }else{
+            return response()->json(['status' => false, 'message' => 'Not Accessible Request']);
         }
     }
    

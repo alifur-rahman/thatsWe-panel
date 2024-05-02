@@ -80,6 +80,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
         Route::any('/show/retrieve', [App\Http\Controllers\admin\OrderController::class, 'data_retrive'])->name('order.show.retrieve');
         Route::any('/details/retrieve', [App\Http\Controllers\admin\OrderController::class, 'data_retrive_details'])->name('order.details.retrieve');
         Route::post('/item/delete', [App\Http\Controllers\admin\OrderController::class, 'delete'])->name('order.delete');
+        Route::post('add/to/agency/zip', [App\Http\Controllers\admin\OrderController::class, 'add_to_agency_zip'])->name('order.add.to.agency.zip');
     });
 
 
