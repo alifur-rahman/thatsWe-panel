@@ -17,5 +17,6 @@ class AgencyZip extends Model
         'street',
         'email',
         'site_url',
+        'ref'
     ];
 }

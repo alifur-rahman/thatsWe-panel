@@ -94,6 +94,71 @@
                             <i data-feather="trash" class="me-25"></i>
                             Delete Order
                         </button>
+                    </div>
+
+                    <div class="d-flex justify-content-between flex-column gap-2">
+                        <div>
+                            <hr class="bg-gradient">
+                            <div class="d-flex justify-content-between flex-column">
+                                <small class="mb-1 text-center">Add this order to agency by zip to show this details
+                                    <br> into
+                                    "Travel
+                                    agencies
+                                    with
+                                    thatsWE by zip code" in <a target="_blank"
+                                        href="https://thatssoft.de/policy">Thatssoft</a> </small>
+                                <div id="zip_agency_resultBox-{{ $itemData->id }}">
+                                    @if ($isZipAgency)
+                                        <div class="card mb-0">
+                                            <div class="card-body border-start-3 border-start-primary">
+                                                <div class="d-flex gap-2">
+                                                    <div class="section-icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="100"
+                                                            height="100" viewBox="0 0 24 24" fill="none"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round"
+                                                            class="feather feather-thumbs-up icon-trd text-primary">
+                                                            <path
+                                                                d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="section-data">
+                                                        <div class="tv-title">
+                                                            This order details already added in agency by
+                                                            zip
+                                                        </div>
+                                                        <div class="tv-total">
+
+                                                            <small> To see all go to <a target="_blank"
+                                                                    href="{{ route('agency.zip.show') }}">Agency By
+                                                                    ZIP</a></small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @else
+                                        <form action="{{ route('order.add.to.agency.zip') }}" method="post"
+                                            id="form-add-agency_zip">
+                                            @csrf
+                                            <input type="hidden" name="order_id" value="{{ $itemData->id }}">
+                                            <button type="button" class="w-100 btn btn-outline-info"
+                                                id="add-zip_agency-btn" onclick="_run(this)" data-el="fg"
+                                                data-form="form-add-agency_zip"
+                                                data-loading="<div class='spinner-border spinner-border-sm' role='status'><span class='visually-hidden'>Loading...</span></div>"
+                                                data-callback="addAgecnyZipSuccessCallBack"
+                                                data-btnid="add-zip_agency-btn" data-file="true">
+                                                <i data-feather="send" class="me-25"></i>
+                                                Add into agecy By ZIP</button>
+                                        </form>
+                                    @endif
+                                </div>
+                            </div>
+                            <hr class="bg-gradient">
+
+
+                        </div>
 
                     </div>
 

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('street')->nullable();
             $table->text('email')->nullable();
             $table->text('site_url')->nullable();
+            $table->bigInteger('ref')->nullable();
             $table->timestamps();
         });
     }
