@@ -120,8 +120,10 @@
                                                         <p class="card-text  mb-1"> 3. Click on "Save Agency Details"
                                                             button. </p>
                                                         <p class="card-text mb-1"> 4. You will get a success message.</p>
-                                                        <p class="card-text mb-1"> 5. Go <a href="https://thatswe.de/policy"
-                                                                target="_blank">www.thatswe.de/policy</a> and reload to see
+                                                        <p class="card-text mb-1"> 5. Go <a
+                                                                href="https://thatssoft.de/policy"
+                                                                target="_blank">www.thatssoft.de/policy</a> and reload to
+                                                            see
                                                             the
                                                             Changes</p>
                                                     </div>
@@ -145,8 +147,10 @@
                                                         <p class="card-text  mb-1"> 4. Click on "Update Agency Details"
                                                             button. </p>
                                                         <p class="card-text mb-1"> 5. You will get a success message.</p>
-                                                        <p class="card-text mb-1"> 6. Go <a href="https://thatswe.de/policy"
-                                                                target="_blank">www.thatswe.de/policy</a> and reload to see
+                                                        <p class="card-text mb-1"> 6. Go <a
+                                                                href="https://thatssoft.de/policy"
+                                                                target="_blank">www.thatssoft.de/policy</a> and reload to
+                                                            see
                                                             the
                                                             Changes</p>
                                                     </div>
@@ -170,8 +174,9 @@
                                                             button. </p>
                                                         <p class="card-text mb-1"> 5. You will get a success message.</p>
                                                         <p class="card-text mb-1"> 6. Go <a
-                                                                href="https://thatswe.de/policy"
-                                                                target="_blank">www.thatswe.de/policy</a> and reload to see
+                                                                href="https://thatssoft.de/policy"
+                                                                target="_blank">www.thatssoft.de/policy</a> and reload to
+                                                            see
                                                             the
                                                             Changes</p>
                                                     </div>
